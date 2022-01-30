@@ -1,9 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
+import galeryReducer from '../features/Gallery/GallerySlice';
+import sidearReducer from '../features/Sidebar/SidebarSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    sidebar: sidearReducer,
+    galery: galeryReducer
   },
 });
 

@@ -1,0 +1,133 @@
+@import ../../cssVariables
+
+*
+  margin: 0
+  padding: 0
+  user-select: none
+  box-sizing: border-box
+  font-family: 'Poppins', sans-serif
+
+.outlet
+  position: absolute
+  left: 50px
+  transition: left 0.4s ease
+  &.show
+    left: 255px
+
+.btn
+  position: absolute
+  height: 45px
+  width: 45px
+  text-align: center
+  background: $sidebar-backround
+  border-radius: 3px
+  cursor: pointer
+  transition: left 0.4s ease
+
+  &.click
+    width: 250px
+    transition: left 0.4s ease
+  span
+    color: $white-color
+    font-size: 28px
+    line-height: 45px
+
+  &.click span:before
+    content: '\f00d'
+
+.click:before
+  content: '\f00d'
+
+.sidebar
+  position: fixed
+  top: 0
+  width: 250px
+  height: 100%
+  left: -205px
+  background: $sidebar-backround
+  transition: left 0.4s ease
+
+  &.show
+    left: 0px
+
+  .text
+    color: $white-color
+    font-size: 25px
+    font-weight: 600
+    line-height: 65px
+    text-align: center
+    background: $text-background
+    letter-spacing: 1px
+    span
+      position: absolute
+      right: 10px
+      top: 20px
+
+nav ul
+  background: $sidebar-backround
+  height: 100%
+  width: 100%
+  list-style: none
+
+  li
+    line-height: 60px
+    border-top: 1px solid rgba(255, 255, 255, 0.1)
+
+    &:last-child
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+
+    a
+      position: relative
+      color: $white-color
+      text-decoration: none
+      font-size: 18px
+      padding-left: 40px
+      font-weight: 500
+      display: block
+      width: 100%
+      border-left: 3px solid transparent
+
+    a
+      &.activeLink
+        color: $activeColor
+        background: $text-background
+        border-left-color: $activeColor
+
+    a:hover
+      background: $text-background
+
+  ul
+    position: static
+    display: none
+
+  .feat_show.show, .serv_show.show1
+    display: block
+
+  ul li
+    line-height: 42px
+    border-top: none
+
+    a
+      font-size: 17px
+      color: $white-color1
+      padding-left: 80px
+
+  li.active ul li a
+    color: $white-color1
+    background: $sidebar-backround
+    border-left-color: transparent
+
+  ul li a:hover
+    color: cyan !important
+    background: $text-background !important
+
+  li a span
+    position: absolute
+    top: 50%
+    right: 20px
+    transform: translateY(-50%)
+    font-size: 22px
+    transition: transform 0.4s
+
+    &.rotate
+      transform: translateY(-50%) rotate(-180deg)
